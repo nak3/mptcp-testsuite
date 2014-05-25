@@ -13,6 +13,8 @@ Step0. clone this repository
 
 Step1. create virtual machines
 
+`sudo mkdir /var/www/html/ks`
+
 `cd mptcp-testsuite/kvm-setup`
 
 `sudo python virt-construct.py -c conf/mptcp-client.conf`
