@@ -11,7 +11,7 @@ Step0. clone this repository
 
 `git clone https://github.com/nak3/mptcp-testsuite.git`
 
-Step1. create virtual machines
+Step1. create virtual machines (You needs to start apache httpd service.)
 
 `sudo mkdir /var/www/html/ks`
 
