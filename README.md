@@ -10,9 +10,10 @@ Usage
 Step0. clone this repository
 
 `git clone https://github.com/nak3/mptcp-testsuite.git`
-`cd mptcp-testsuite/kvm-setup`
 
 Step1. create virtual machines
+
+`cd mptcp-testsuite/kvm-setup`
 
 `sudo python virt-construct.py -c conf/mptcp-client.conf`
 
