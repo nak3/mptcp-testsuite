@@ -18,7 +18,7 @@ Default Network
 -----
 This is a default network configuration, which is the result of `python virt-construct.py -c conf/mptcp-*.conf`. IP address of each eth* will be set by mptcp-tests/initial-setup.py and mptcp-tests/network.conf.
 
-![default network](http://kenjiro.fedorapeople.org/misc/pictures/default-network.png)
+![default network](https://github.com/nak3/mptcp-testsuite/blob/master/misc/pictures/default-network.png?raw=true)
 
 Check default network [IP addresses](https://github.com/nak3/mptcp-testsuite/blob/master/mptcp-tests/network.conf)
 

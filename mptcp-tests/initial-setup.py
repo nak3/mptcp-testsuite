@@ -57,6 +57,10 @@ def setup_path_manager(manager_type):
     do_ssh(client_eth0, ssh_port, "sysctl -w net.mptcp.mptcp_path_manager="+ manager_type)
     do_ssh(router_eth0, ssh_port, "sysctl -w net.mptcp.mptcp_path_manager="+ manager_type)
     do_ssh(server_eth0, ssh_port, "sysctl -w net.mptcp.mptcp_path_manager="+ manager_type)
+    if manager_type == "ndiffports":
+        do_ssh(client_eth0, ssh_port, "sysctl -w net.mptcp.mptcp_ndiffports=10")
+        do_ssh(router_eth0, ssh_port, "sysctl -w net.mptcp.mptcp_ndiffports=20")
+        do_ssh(server_eth0, ssh_port, "sysctl -w net.mptcp.mptcp_ndiffports=10")
 
 
 def setup_initial_service():
@@ -74,6 +78,11 @@ def setup_initial_service():
     do_ssh(server_eth0, ssh_port, "systemctl stop firewalld")
     do_ssh(server_eth0, ssh_port, "systemctl start iptables")
     do_ssh(server_eth0, ssh_port, "systemctl start httpd")
+
+def setup_ethdown(interface_l):
+    for intf in interface_l:
+        do_ssh(client_eth0, ssh_port, "ifdown "+intf)
+        do_ssh(server_eth0, ssh_port, "ifdown "+intf)
 
 
 if __name__ == '__main__':
@@ -103,8 +112,12 @@ if __name__ == '__main__':
 
     ssh_port = config.get("port","ssh_port")
 
+    down_inteface_list = ["eth3","eth4"]
+    setup_ethdown(down_inteface_list)
+
     setup_nopass()
     network_default_setup()
     debug_setup()
     setup_path_manager("fullmesh")
+    #setup_path_manager("ndiffports")
     setup_initial_service()

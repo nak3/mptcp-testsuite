@@ -82,11 +82,5 @@ if __name__ == '__main__':
 
     ssh_port = config.get("port","ssh_port")
 
-    do_ssh(client_eth0, ssh_port, "ifdown eth3")
-    do_ssh(client_eth0, ssh_port, "ifdown eth4")
-
-    do_ssh(client_eth0, ssh_port, "sysctl -w net.mptcp.mptcp_path_manager='fullmesh'")
-    do_ssh(server_eth0, ssh_port, "sysctl -w net.mptcp.mptcp_path_manager='fullmesh'")
-
     iperf_route1_test()
     iperf_route2_test()

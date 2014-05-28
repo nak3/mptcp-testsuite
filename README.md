@@ -10,12 +10,9 @@ Usage
 Step0. clone this repository
 
 `git clone https://github.com/nak3/mptcp-testsuite.git`
-
-Step1. create virtual machines  (You needs to start apache httpd service and install virt-install)
-
-`sudo mkdir /var/www/html/ks`
-
 `cd mptcp-testsuite/kvm-setup`
+
+Step1. create virtual machines (You needs to start apache httpd service and install virt-install)
 
 `sudo python virt-construct.py -c conf/mptcp-client.conf`
 
