@@ -11,7 +11,7 @@ if __name__ == '__main__':
         print 'Usage: $ python %s filename TEST [PATH_MANGER]' % argvs[0]
         quit()
 
-    testlist = ["route","tcpdump","iperf","qperf"]
+    testlist = ["route","tcpdump","iperf","qperf","netem"]
 
     if (argvs[1] == "all"):
         print "Start: %s test\n" % argvs[1]
