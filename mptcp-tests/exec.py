@@ -7,11 +7,11 @@ if __name__ == '__main__':
     argvs = sys.argv
     argc = len(argvs)
 
-    if (argc != 2):
-        print 'Usage: $ python %s filename TEST [PATH_MANGER]' % argvs[0]
-        quit()
+    testlist = ["route","tcpdump","iperf","qperf","netem","bigdata"]
 
-    testlist = ["route","tcpdump","iperf","qperf","netem"]
+    if (argc != 2):
+        print 'Usage: $ python %s TESTNAME' % argvs[0]
+        quit()
 
     if (argvs[1] == "all"):
         print "Start: %s test\n" % argvs[1]
